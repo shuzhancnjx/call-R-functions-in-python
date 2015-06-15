@@ -9,3 +9,24 @@ bin-release/
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
+
+
+import rpy2.robjects.packages as importr
+import rp2.robjects as ro
+import numpy as np
+import scipy as sp
+import panda as pd 
+import pandas.rpy.common as com
+
+
+def installpackage(packagename):   
+    utils=importr('utils')
+    utils.install_packages(packagename, repose='http://r-forge.r-project.org')
+
+def reliability(data,packagename):
+    # dataframe of pandas
+    installpackage(packagename)
+    rpack=importr(packagename)
+    rdata=com.convert_to_r_dataframe(data)
+    res=rpack.reliability(rdata)
+    print res 
