@@ -1,0 +1,23 @@
+Using windows command prompt to open pip.exe or easy_install.exe
+
+1. Download the binary packages from the website: 
+http://www.lfd.uci.edu/~gohlke/pythonlibs/
+
+File name: 
+rpy2-2.5.6-cp27-none-win_amd64.whl
+
+2. Change some system environment variables:
+
+a. For the variable path, add the directory where R executable sits: 
+C:\Program Files\R\R-3.2.0\bin\x64
+b. Add an R_HOME system variable and set it to the top level directory of my R installation: C:\Program Files\R\R-3.0.2\.
+c. Add an R_USER system variable and set it to the directory that the rpy2 module would install into: C:\Anaconda3\Lib\site-packages\rpy2\.
+ 
+3.  Install through the windows command 
+
+a. cd the directory to where the pip.exe sits 
+
+b.  save the whl files downloaded in the same directory as where the pip.exe sits
+
+c. type in the command
+ pip install rpy2-2.5.6-cp27-none-win_amd64.whl
